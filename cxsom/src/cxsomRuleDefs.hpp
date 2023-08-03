@@ -10,6 +10,7 @@
 #include <stdexcept>
 #include <map>
 #include <memory>
+#include <utility> // BUG FIX for c++20 => std:exchange
 #include <tuple>
 #include <variant>
 #include <set>
