@@ -3,6 +3,7 @@
 
 
 
+#include <utility> // BUG FIX for c++20 => std:exchange
 #include <stack>
 #include <string>
 #include <algorithm>
@@ -10,7 +11,6 @@
 #include <stdexcept>
 #include <map>
 #include <memory>
-#include <utility> // BUG FIX for c++20 => std:exchange
 #include <tuple>
 #include <variant>
 #include <set>
