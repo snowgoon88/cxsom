@@ -1,0 +1,63 @@
+* CxSOM 2023
+** installation
+*** fftconv -DCMAKE_INSTALL_PREFIX=/home/dutech/Projets
+*** cxsom -DCMAKE_INSTALL_PREFIX=/home/dutech/Projets
+*** pycxsom using setup.pu => ~/.localbin et ~/.local/lib
+** tests
+*** OK avec exemple-004-002
+** TODO [0/1] Bug/Improvements
+*** TODO Error de type checking :improvement:
+j'ai écrit kwd::type("W", "Map1<Scalar>=10", ...) en oubliant le 'D' de Map1D
+et le msg erreur est
+> error Char 'D' expected.
+MAIS on ne sait pas bien à quoi cela fait référence !
+
+* ARCHIVE install 2021
+** install de cxsom-builder => no compil because No package 'cxsom-rules' found
+** install de cxsom
+*** install de fftconv (dans ~/Projets)
+**** ajout d'un exemple plus parlant (alain_example.cpp)
+*** compilation
+**** ajout du flag de compil '-lstdc++fs' car GCC < 9.0.0
+** jouer avec CXSOM
+*** TODO ajouter un nouvel operateur
+*** TODO X windows bar n'arrête pas les viewer
+*** TODO dans doxygen, savoir dans quel fichier sont définis
+*** TODO visualiser en direct ?? (VisuGL, mais lire from file) !!
+*** [/] example-001-001
+modifie ajoute et relit dans répertoire "root_dir"
+**** TODO Exception caught : basic_ios::clear: iostream error
+*** example-002-001
+2 namespaces. BCD = random maps => averagers from samples or with averagers
++ viewer ; une map est une courbe entre [0..99]
+*** [4/4] example-002-002
+utilise tous les opérateurs de CXSOM
+**** clear, random, <<, | param de opérateur
+**** copy, average
+**** match_triangle, match_gaussian
+**** DONE merge ??
+**** DONE learn_triangle, learn_gaussian,
+**** argmax
+**** DONE toward_conv_argmax
+**** DONE converge
+*** example-002-003 naming
+**** add numbers to names
+**** shift in the past
+*** [1/2] example-002-004 relaxation time
+peut compter le temps de relaxation entre même timestep
+**** TODO Pk cette fois le graph init sert à quelque chose ?
+**** DONE pourquoi 500 données dans "Cvg" => WALLTIME = 500 pour random
+*** [/] example-002-005 ping
+*** [/] example-003 => RSOM divers
+*** [/] example-005-xxx => add a new Operation
+- .hpp files to be able to define the rules => -foo-rules.hpp
+- .cpp file that defines operation/Jobs     => -foo-operations.cpp
+- .cpp file that defines a new processos    => -foo-processior.cpp
+- .cpp file that declare rules              => -foo-basic-test.cpp
+
+Operation/Jobs must check types, answer all in/out args callbacks
+and must be able to be registered to processor (update and type_check)
+
+MUST read the specifications
+***
+***
